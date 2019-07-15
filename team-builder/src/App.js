@@ -12,10 +12,10 @@ const [teamData, setTeamData] = useState({name: "", email: "", role: ""})
       <Form setTeamData={setTeamData} />
       {console.log("this is team data in App"),
     console.log({teamData})}
-    {/* <h2> This is team data</h2>
-    {teamData.name}
-    {teamData.email}
-    {teamData.role} */}
+    <h2> This is the data being passed to App</h2>
+    <h3>{teamData.name}</h3>
+    <h3>{teamData.email}</h3>
+    <h3>{teamData.role}</h3>
     </div>
   );
 }
