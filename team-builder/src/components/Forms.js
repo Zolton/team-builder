@@ -38,8 +38,8 @@ function Form(props) {
       // if props isn't populated, setTeamData as props.TeamData - send it back
       props.setTeamData([...updated]);
     } else {
-      // This is the if-statement for normal people entry
-      // if memberToEdit is false, no button was clicked
+      // This is the if-statement for entry of new team members
+      // if memberToEdit is false, meaning no edit button was clicked,
       //  So just send in Team data and tack on the new user data
       props.setTeamData([
         ...props.teamData,
