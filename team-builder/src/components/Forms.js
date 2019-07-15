@@ -16,13 +16,32 @@ function Form(props) {
 
   const submitHandler = event => {
     event.preventDefault();
-    console.log("this is userData being passed to the submit Handler");
-    console.log(userData);
-    props.setTeamData([...props.teamData, userData]);
+    //console.log("this is userData being passed to the submit Handler");
+    //console.log(userData);
+
+    if (props.memberToEdit) {
+        console.log("from inside the if statement")
+        console.log(props.memberToEdit)
+      let updated = props.teamData.map(member => {
+        if (member.indexNumber === props.memberToEdit.indexNumber) {
+        console.log("from inside the second if statement")
+        console.log(userData)
+          return userData;
+        } else {
+          return member;
+        }
+      });
+      props.setTeamData([...updated]);
+    } else {
+      props.setTeamData([
+        ...props.teamData,
+        { ...userData, indexNumber: props.teamData.length }
+      ]);
+    }
   };
 
   useEffect(() => {
-    console.log("Heyo! props.membertoedit changed");
+    //console.log("Heyo! props.membertoedit changed");
 
     if (props.memberToEdit) {
       setUserData({
