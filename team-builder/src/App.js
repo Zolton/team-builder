@@ -4,15 +4,17 @@ import Form from "./components/Forms";
 
 function App() {
   const [teamData, setTeamData] = useState([]);
-  const [memberToEdit, setMemberToEdit] = useState();
+  const [memberToEdit, setMemberToEdit] = useState("");
 
   return (
     <div className="App">
       Team Builder App
       <Form
-        setTeamData={setTeamData}
-        setMemberToEdit={setMemberToEdit}
         teamData={teamData}
+        setTeamData={setTeamData}
+        memberToEdit={memberToEdit}
+        //setMemberToEdit={setMemberToEdit}
+        
       />
       {console.log("this is team data in App")}
       {console.log({ teamData })}

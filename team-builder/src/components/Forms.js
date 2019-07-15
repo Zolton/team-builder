@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function Form(props) {
   const [userData, setUserData] = useState({
@@ -20,6 +20,18 @@ function Form(props) {
     console.log(userData);
     props.setTeamData([...props.teamData, userData]);
   };
+
+  useEffect(() => {
+    console.log("Heyo! props.membertoedit changed");
+
+    if (props.memberToEdit) {
+      setUserData({
+        name: props.memberToEdit.name,
+        email: props.memberToEdit.email,
+        role: props.memberToEdit.role
+      });
+    }
+  }, [props.memberToEdit]);
 
   return (
     <>
