@@ -8,30 +8,24 @@ function App() {
 
   return (
     <div className="App">
-      Team Builder App
+      <h1>Team Builder App</h1>
       <Form
         teamData={teamData}
         setTeamData={setTeamData}
         memberToEdit={memberToEdit}
-        //setMemberToEdit={setMemberToEdit}
-        
       />
-      {/* {console.log("this is team data in App")}
-      {console.log({ teamData })} */}
-      <h2> This is the data being passed to App</h2>
+
+      <h2> This is your team</h2>
       {teamData.map(name => (
         <div>
-          <h3>{name.name}</h3>
-          <h3>{name.email}</h3>
-          <h3>{name.role}</h3>
+          <h4>{name.name}</h4>
+          <h4>{name.email}</h4>
+          <h4>{name.role}</h4>
           <button onClick={() => setMemberToEdit(name)}>
             Edit Team Member name
           </button>
-          {/* {console.log("This is memberToEdit")}
-          {console.log(memberToEdit)} */}
         </div>
       ))}
-      
     </div>
   );
 }

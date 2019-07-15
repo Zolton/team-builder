@@ -37,7 +37,7 @@ Follow these steps for completing your project.
 
 - [ x] Render a list of team members from state
 - [ x] Build a form to add a new member to the list of members
-- [ ] Add the functionality to edit team members
+- [x ] Add the functionality to edit team members
 
 ### STEP 1 - Setup your state
 
