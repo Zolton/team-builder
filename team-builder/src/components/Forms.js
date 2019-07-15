@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-function Form() {
+function Form(props) {
+
   const [userData, setUserData] = useState({
     name: "",
     email: "",
@@ -16,7 +17,9 @@ function Form() {
 
   const submitHandler = (event) => {
       event.preventDefault();
-        console.log(userData)
+      console.log("this is userData being passed to the submit Handler")
+        console.log(userData);
+        props.setTeamData(userData);
   }
 
   return (
@@ -46,6 +49,11 @@ function Form() {
         />
         <button>Submit</button>
       </form>
+
+      <h3>{userData.name}</h3>
+      <h3> {userData.email}</h3>
+      <h3>{userData.role}</h3>
+
     </>
   );
 }
