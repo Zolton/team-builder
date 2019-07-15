@@ -14,10 +14,15 @@ function Form() {
     });
   };
 
+  const submitHandler = (event) => {
+      event.preventDefault();
+        console.log(userData)
+  }
+
   return (
     <>
       <div>Hello from Forms</div>
-      <form>
+      <form onSubmit = {submitHandler}>
         <input
           type="text"
           name="name"
@@ -39,6 +44,7 @@ function Form() {
           onChange={changeHandler}
           value={userData.role}
         />
+        <button>Submit</button>
       </form>
     </>
   );
